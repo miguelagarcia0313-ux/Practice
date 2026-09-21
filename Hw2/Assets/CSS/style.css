@@ -1,0 +1,291 @@
+/* ===========================================================
+   TOKENS — same values as the portfolio site
+=========================================================== */
+:root {
+  --bg: #05060a;
+  --bg-panel: #0b0e16;
+  --bg-panel-2: #0f1420;
+  --navy: #0d1b3d;
+  --blue: #2f6fff;
+  --blue-bright: #5b93ff;
+  --cyan: #00d4ff;
+  --text: #eef1f7;
+  --muted: #8d97ac;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(91, 147, 255, 0.35);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --max-width: 1100px;
+}
+
+/* ===========================================================
+   RESET
+=========================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================================
+   AURORA BACKGROUND — identical to the portfolio
+=========================================================== */
+.aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+
+.aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.aurora__blob--one {
+  width: 46vw; height: 46vw; top: -10%; left: -10%;
+  background: radial-gradient(circle at 30% 30%, var(--blue) 0%, transparent 70%);
+  animation: drift-one 22s ease-in-out infinite;
+}
+.aurora__blob--two {
+  width: 38vw; height: 38vw; top: 30%; right: -12%;
+  background: radial-gradient(circle at 60% 40%, var(--cyan) 0%, transparent 70%);
+  animation: drift-two 26s ease-in-out infinite;
+}
+.aurora__blob--three {
+  width: 34vw; height: 34vw; bottom: -14%; left: 22%;
+  background: radial-gradient(circle at 50% 50%, var(--navy) 0%, transparent 70%);
+  opacity: 0.65;
+  animation: drift-three 30s ease-in-out infinite;
+}
+
+@keyframes drift-one { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(8vw, 10vh) scale(1.15); } }
+@keyframes drift-two { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-6vw, 8vh) scale(1.1); } }
+@keyframes drift-three { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(5vw, -6vh) scale(1.2); } }
+
+/* ===========================================================
+   LAYOUT
+=========================================================== */
+main { position: relative; z-index: 1; }
+
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+.section__head { margin-bottom: 32px; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.section h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-sub { color: var(--muted); max-width: 60ch; }
+
+/* ===========================================================
+   SPLIT TABS
+=========================================================== */
+.split-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.split-tab {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  background: rgba(91, 147, 255, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.split-tab:hover {
+  background: rgba(91, 147, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.split-tab.is-active {
+  background: linear-gradient(120deg, var(--blue), var(--cyan));
+  color: #050608;
+  font-weight: 600;
+  border-color: transparent;
+  box-shadow: 0 10px 30px -8px rgba(47, 111, 255, 0.55);
+}
+
+/* ===========================================================
+   SPLIT PANELS — hidden/shown one at a time by script.js
+=========================================================== */
+.split-panel__head { margin-bottom: 24px; }
+
+.split-panel__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+}
+
+.split-panel__head p {
+  color: var(--blue-bright);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ===========================================================
+   EXERCISE GRID — same card system as .projects__grid
+=========================================================== */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.exercise-card {
+  position: relative;
+  padding: 24px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-bright);
+}
+
+.exercise-card__glow {
+  position: absolute;
+  top: -40%;
+  right: -40%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.exercise-card:hover .exercise-card__glow { opacity: 1; }
+
+.exercise-card__image {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.exercise-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exercise-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.exercise-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.weight-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.weight-label input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.weight-label input:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+
+/* ===========================================================
+   FOOTER
+=========================================================== */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+@media (max-width: 900px) {
+  .exercise-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .exercise-grid { grid-template-columns: 1fr; }
+  .section { padding: 64px 20px 70px; }
+  .aurora__blob { filter: blur(60px); opacity: 0.4; }
+}

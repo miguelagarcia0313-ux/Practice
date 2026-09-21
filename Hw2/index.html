@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout Split</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+<body>
+
+<!-- Moving background glow, same aurora used on the portfolio -->
+<div class="aurora" aria-hidden="true">
+  <span class="aurora__blob aurora__blob--one"></span>
+  <span class="aurora__blob aurora__blob--two"></span>
+  <span class="aurora__blob aurora__blob--three"></span>
+</div>
+
+<main class="section">
+  <div class="section__head">
+    <p class="eyebrow">Training Plan</p>
+    <h1>Workout Split</h1>
+    <p class="page-sub">Four splits, one exercise library. Pick a split below to see its exercises.</p>
+  </div>
+
+  <!-- Tab buttons: only one split panel shows at a time -->
+  <div class="split-tabs" id="splitTabs" role="tablist" aria-label="Workout splits">
+    <button class="split-tab is-active" role="tab" aria-selected="true" aria-controls="split1" data-target="split1">Split 1</button>
+    <button class="split-tab" role="tab" aria-selected="false" aria-controls="split2" data-target="split2">Split 2</button>
+    <button class="split-tab" role="tab" aria-selected="false" aria-controls="split3" data-target="split3">Split 3</button>
+    <button class="split-tab" role="tab" aria-selected="false" aria-controls="split4" data-target="split4">Split 4</button>
+  </div>
+
+  <!-- SPLIT 1 -->
+  <section class="split-panel is-active" id="split1" role="tabpanel">
+    <div class="split-panel__head">
+      <h2>Split 1</h2>
+      <p>Chest, Shoulders, &amp; Triceps</p>
+    </div>
+
+    <div class="exercise-grid">
+      
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/incline-barbell-press.jpg" alt="Incline Barbell Press">
+        </div>
+        <h3>Incline Barbell Press</h3>
+        <p>Grab a bench two equal weight dumbbells at a 15-30 degree incline.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="1exercise1Input" placeholder="e.g. 95 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/flat-dumbbell-press.jpg" alt="Flat Dumbbell Press">
+        </div>
+        <h3>Flat Dumbbell Press</h3>
+        <p>Lie on a flat bench with a dumbbell in each hand.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="1exercise2Input" placeholder="e.g. 60 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/overhead-dumbbell-press.jpg" alt="Overhead Dumbbell Press">
+        </div>
+        <h3>Overhead Dumbbell Press</h3>
+        <p>Stand with feet shoulder-width apart and press dumbbells overhead.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="1exercise3Input" placeholder="e.g. 40 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/cable-lateral-raise.jpg" alt="Cable Lateral Raise">
+        </div>
+        <h3>Cable Lateral Raise</h3>
+        <p>Stand with feet shoulder-width apart and raise cables to the sides.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="1exercise4Input" placeholder="e.g. 15 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/incline-walk.jpg" alt="Incline Walk">
+        </div>
+        <h3>Incline Walk</h3>
+        <p>1-2 mph at a 12 degree incline.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="1exercise5Input" placeholder="n/a">
+        </label>
+      </article>
+    </div>
+  </section>
+
+  <!-- SPLIT 2 -->
+  <section class="split-panel" id="split2" role="tabpanel" hidden>
+    <div class="split-panel__head">
+      <h2>Split 2</h2>
+      <p>Back, Biceps, &amp; Forearms</p>
+    </div>
+
+    <div class="exercise-grid">
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/lat-pulldown.jpg" alt="Lat Pulldown">
+        </div>
+        <h3>Lat Pulldown</h3>
+        <p>Grab the bar with a wide grip and pull it down to your chest.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="2exercise1Input" placeholder="e.g. 80 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/seated-cable-row.jpg" alt="Seated Cable Row">
+        </div>
+        <h3>Seated Cable Row</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="2exercise2Input" placeholder="e.g. 70 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/bicep-curl.jpg" alt="Bicep Curl">
+        </div>
+        <h3>Bicep Curl</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="2exercise3Input" placeholder="e.g. 25 lbs">
+        </label>
+      </article>
+    </div>
+  </section>
+
+  <!-- SPLIT 3 -->
+  <section class="split-panel" id="split3" role="tabpanel" hidden>
+    <div class="split-panel__head">
+      <h2>Split 3</h2>
+      <p>Quads, Hamstrings, &amp; Calves</p>
+    </div>
+
+    <div class="exercise-grid">
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/back-squat.jpg" alt="Back Squat">
+        </div>
+        <h3>Back Squat</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="3exercise1Input" placeholder="e.g. 135 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/romanian-deadlift.jpg" alt="Romanian Deadlift">
+        </div>
+        <h3>Romanian Deadlift</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="3exercise2Input" placeholder="e.g. 115 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/standing-calf-raise.jpg" alt="Standing Calf Raise">
+        </div>
+        <h3>Standing Calf Raise</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="3exercise3Input" placeholder="e.g. 90 lbs">
+        </label>
+      </article>
+    </div>
+  </section>
+
+  <!-- SPLIT 4 -->
+  <section class="split-panel" id="split4" role="tabpanel" hidden>
+    <div class="split-panel__head">
+      <h2>Split 4</h2>
+      <p>Conditioning &amp; Core</p>
+    </div>
+
+    <div class="exercise-grid">
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/plank.jpg" alt="Plank">
+        </div>
+        <h3>Plank</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="4exercise1Input" placeholder="n/a">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/sled-push.jpg" alt="Sled Push">
+        </div>
+        <h3>Sled Push</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="4exercise2Input" placeholder="e.g. 135 lbs">
+        </label>
+      </article>
+
+      <article class="exercise-card">
+        <div class="exercise-card__glow" aria-hidden="true"></div>
+        <div class="exercise-card__image">
+          <img src="Assets/IMG/russian-twist.jpg" alt="Russian Twist">
+        </div>
+        <h3>Russian Twist</h3>
+        <p>Placeholder — swap in your own description and photo.</p>
+        <label class="weight-label">
+          Minimum weight
+          <input type="text" id="4exercise3Input" placeholder="e.g. 20 lbs">
+        </label>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Miguel Garcia. Built with care.</p>
+</footer>
+
+<script src="Assets/JS/script.js"></script>
+</body>
+</html>
