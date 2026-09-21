@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
+.tittle {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.tittle h1 {
+  color: #333333;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;        /* wrap instead of nowrap so it's actually responsive */
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  flex: 0 0 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;               /* keeps the image corners rounded too though it looked better */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+.card-text {
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.card-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive: stack cards on small screens always make sure your website looks good no matter the screen size.*/
+@media (max-width: 340px) {
+  .card {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}

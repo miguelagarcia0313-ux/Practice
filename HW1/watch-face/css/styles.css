@@ -1,0 +1,48 @@
+/* TODO: Write the selector for the body element. */
+ body{
+    background-color: #222;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* TODO: Write the selector for the "watch" class. */
+ div.watch{         
+    width: 350px;
+    height: 350px;
+    background-color: #111;
+    border: 12px solid #444;
+    border-radius: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px #000;
+} 
+
+/* TODO: Write the selector for the class "brand". */
+ div.brand{
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* TODO: Write the selector for the id "time". */
+ #time{
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* TODO: Write the selector for the id "date". */
+ #date{
+    color: #aaa;
+    font-size: 16px;
+    margin-top: 15px;
+} 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Express Rewards</title>
+    <link rel="stylesheet" href="/panda-awards/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="banner">
+            <h1>EARN POINTS</h1>
+        </div>
+
+        <form class="rewards-form">
+
+            <h1>Forgot to scan?</h1>
+            <h5>Don't worry, just submit the details from your receipt to claim your points.</h5>
+            <h5>Check the sample receipt provided for guidance.</h5>
+
+            <div class="form-group">
+                <label for="store">Store Number</label>
+                <input type="text" id="store" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="text" id="date" placeholder="MM/DD/YYYY" required>
+                <p class="note">Receipts can only be redeemed within 7 days of purchase.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="order-number">Order Number</label>
+                <input type="text" id="order-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="order-total">Order Total</label>
+                <input type="text" id="order-total" placeholder="$00.00" required>
+            </div>
+
+            <h3 class="section-title">How was your experience today?</h3>
+
+            <div class="radio-group">
+                <label><input type="radio" name="experience" value="excellent"> Excellent</label>
+                <label><input type="radio" name="experience" value="good"> Good</label>
+                <label><input type="radio" name="experience" value="average"> Average</label>
+                <label><input type="radio" name="experience" value="poor"> Poor</label>
+            </div>
+
+            <label for="feedback">Additional Feedback (optional)</label>
+            <textarea id="feedback" maxlength="300" placeholder="Share any feedback or comments here..."></textarea>
+
+            <label class="checkbox">
+                <input type="checkbox"> <span>Sign me up for email updates</span>
+            </label>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+
+        </form>
+
+        <p class="note">*Points will be awarded based on your total prior to tax.</p>
+             <div class="sample-receipt-tittle">
+            <h5>Sample Receipt</h5>
+        </div>
+        <div class="sample-receipt">
+            
+            <p>Panda Express #1619</p>
+            <p>Rosemead, CA</p>
+            <p>(626) 799-9898</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
