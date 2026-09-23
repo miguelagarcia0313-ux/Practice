@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Metadata, page title, external fonts, and the project stylesheet. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exam 1 Practice Lab</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+<body>
+	<!-- Site header contains the brand and anchor-link navigation. -->
+	<header class="site-header">
+		<div class="header-inner">
+			<a class="brand" href="#top"><span class="brand-mark">{ }</span> exam_01</a>
+			<nav aria-label="Main navigation">
+				<a href="#topics">Topics</a>
+				<a href="#workspace">Workspace</a>
+				<a href="#git">Git cheatsheet</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<!-- Hero section introduces the practice lab and shows a code preview. -->
+		<section class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow">CSCI 3330 / interactive review</p>
+				<h1>Build it.<br><em>Break it.</em><br>Understand it.</h1>
+				<p class="hero-text">A hands-on exam warm-up for the front-end fundamentals that make the web move.</p>
+				<a class="button button-dark" href="#workspace">Open the lab <span>↓</span></a>
+			</div>
+			<div class="hero-terminal" aria-label="Code preview">
+				<div class="terminal-bar"><span></span><span></span><span></span><b>practice.js</b></div>
+				<pre><code><span class="syntax-purple">const</span> exam = {
+  topics: [<span class="syntax-green">"HTML"</span>, <span class="syntax-green">"CSS"</span>,
+		   <span class="syntax-green">"JS"</span>, <span class="syntax-green">"API"</span>],
+  ready: <span class="syntax-orange">true</span>
+};
+
+<span class="syntax-blue">console</span>.log(exam);</code></pre>
+			</div>
+		</section>
+
+		<!-- Each topic is represented by a short HTML content block. -->
+		<section class="topic-strip" id="topics">
+			<div><span class="topic-number">01</span><strong>HTML</strong><small>structure</small></div>
+			<div><span class="topic-number">02</span><strong>CSS</strong><small>presentation</small></div>
+			<div><span class="topic-number">03</span><strong>JS</strong><small>behavior</small></div>
+			<div><span class="topic-number">04</span><strong>Git</strong><small>history</small></div>
+			<div><span class="topic-number">05</span><strong>jQuery</strong><small>DOM helpers</small></div>
+			<div><span class="topic-number">06</span><strong>JSON</strong><small>data</small></div>
+			<div><span class="topic-number">07</span><strong>AJAX</strong><small>async</small></div>
+			<div><span class="topic-number">08</span><strong>APIs</strong><small>services</small></div>
+		</section>
+
+		<!-- These cards provide small exercises for JavaScript, CSS, jQuery, and JSON. -->
+		<section class="workspace" id="workspace">
+			<div class="section-heading">
+				<p class="eyebrow">01 / active workspace</p>
+				<h2>Try the concepts.</h2>
+				<p>Change something, inspect the result, then explain why it works.</p>
+			</div>
+			<div class="lab-grid">
+
+				<article class="lab-card js-card">
+					<div class="card-top"><span class="card-label">JavaScript</span><span class="card-icon">JS</span></div>
+					<h3>Event listener</h3>
+					<p>Use a click event to update the page without reloading.</p>
+					<button class="button button-light" id="countButton" type="button">Click counter <span id="count">0</span></button>
+					<p class="output" id="countMessage">Waiting for an event...</p>
+				</article>
+
+				<article class="lab-card css-card">
+					<div class="card-top"><span class="card-label">CSS</span><span class="card-icon">#</span></div>
+					<h3>Class toggling</h3>
+					<p>JavaScript can add or remove a CSS class from an element.</p>
+					<div class="toggle-demo" id="toggleDemo">Style me</div>
+					<button class="button button-light" id="toggleButton" type="button">Toggle class</button>
+				</article>
+
+				<article class="lab-card jquery-card">
+					<div class="card-top"><span class="card-label">jQuery</span><span class="card-icon">$</span></div>
+					<h3>Selector + effect</h3>
+					<p>Practice selecting an element and changing its content.</p>
+					<button class="button button-light" id="jqueryButton" type="button">Run jQuery</button>
+					<p class="output" id="jqueryOutput">$("#jqueryOutput").text(...)</p>
+				</article>
+
+				<article class="lab-card json-card">
+					<div class="card-top"><span class="card-label">JSON</span><span class="card-icon">{ }</span></div>
+					<h3>Parse data</h3>
+					<p>Convert a JSON string into an object, then render its values.</p>
+					<button class="button button-light" id="jsonButton" type="button">Parse JSON</button>
+					<p class="output" id="jsonOutput">No data parsed yet.</p>
+				</article>
+				
+			</div>
+		</section>
+
+		<!-- The API exercise demonstrates AJAX with the Fetch API. -->
+		<section class="api-section">
+			<div class="api-copy">
+				<p class="eyebrow">02 / asynchronous JavaScript</p>
+				<h2>Talk to an API.</h2>
+				<p>AJAX lets a page request data in the background. This fetch uses JSONPlaceholder, a free practice API.</p>
+				<button class="button button-dark" id="apiButton" type="button">Fetch a post <span>↗</span></button>
+				<p class="status" id="apiStatus" role="status">Ready when you are.</p>
+			</div>
+			<div class="api-result" id="apiResult">
+				<span class="result-label">GET /posts/1</span>
+				<h3>Click fetch to load a response.</h3>
+				<p>The result will be inserted into this card with JavaScript.</p>
+			</div>
+		</section>
+
+		<!-- Git commands are displayed as a quick version-control reference. -->
+		<section class="git-section" id="git">
+			<div class="section-heading">
+				<p class="eyebrow">03 / version control</p>
+				<h2>Git, in a glance.</h2>
+			</div>
+			<div class="git-flow"><code>working tree</code><span>→</span><code>git add</code><span>→</span><code>staging area</code><span>→</span><code>git commit</code><span>→</span><code>repository</code></div>
+			<div class="commands">
+				<div><code>git status</code><span>See changed files</span></div>
+				<div><code>git add .</code><span>Stage all changes</span></div>
+				<div><code>git commit -m "message"</code><span>Save a snapshot</span></div>
+				<div><code>git log --oneline</code><span>Review history</span></div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer closes the page and lists the subjects covered. -->
+	<footer><span>exam_01 / practice lab</span><span>HTML · CSS · JS · Git · jQuery · JSON · AJAX · APIs</span></footer>
+	<!-- jQuery loads before the script that uses its $ selector. -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="Assets/JS/script.js"></script>
+</body>
+</html>
+ 
