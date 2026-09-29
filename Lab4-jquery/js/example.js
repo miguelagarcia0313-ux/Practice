@@ -12,11 +12,13 @@ $(function() {
   $('li').each(function() {
     games.push({ title: $(this).text() });
   });
+
 // Update the counter with the initial number of items
   function updateCount() {
     var items = $('li').length;
     $('#counter').text(`${items}`);
   }
+  
 // Render the list of games
   function renderGames() {
     gameList.empty();
@@ -25,6 +27,7 @@ $(function() {
     });
     updateCount();
   }
+
 // Initial render of the games list
   renderGames();
 

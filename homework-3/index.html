@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="js/source.js"></script>
+
+</head>
+
+<body>   
+    <header class="header">
+        <h1>Admin Dashboard</h1>
+        <div class="user-info">Welcome, <span id="username"></span></div>
+    </header>
+
+    <div class="dashboard">
+        
+        <aside class="sidebar"> <!-- LEFT COLUMN: Menu with buttons -->
+            <button class="nav-button" data-section="dashboard">
+                Dashboard
+            </button>
+            <button class="nav-button" data-section="customers">
+                Customers
+            </button>
+            <button class="nav-button" data-section="reports">
+                Reports
+            </button>
+            <button id="newCustomerButton">
+                + New Customer
+            </button>
+        </aside>
+        
+        <main class="content">  <!-- MAIN AREA: Dashboard with stats and sections -->      
+            
+            <section class="stats">
+                <div class="card" id="card-revenue">
+                    <div class="stat-title">Revenue</div>
+                    <div class="stat-value green"><span class="revenue-amt"></span></div>
+                </div>
+                <div class="card" id="card-customers">
+                    <div class="stat-title">Customers</div>
+                    <div class="stat-value blue"><span id="customer-num"></span></div>
+                </div>
+                <div class="card" id="card-orders">
+                    <div class="stat-title">Orders</div>
+                    <div class="stat-value orange"><span id="orders-amt"></span></div>
+                </div>
+                <div class="card" id="card-issues">
+                    <div class="stat-title">Issues</div>
+                    <div class="stat-value red"><span id="issues-amt"></span></div>
+                </div>
+            </section>
+
+
+            <div class="dashboard-grid">
+                <div>
+                    <section class="panel">
+                        <div id="dashboardTabs">
+                            <ul>
+                                <li><a href="#tab-overview">Overview</a></li>
+                                <li><a href="#tab-sales">Sales</a></li>
+                                <li><a href="#tab-activity">Activity</a></li>
+                            </ul>
+
+                            <div id="tab-overview">
+                                <h3>Monthly Performance</h3>
+                                <p>Revenue is currently at <strong class="revenue-amt"></strong></p>
+                            </div>
+
+                            <div id="tab-sales">
+                                <h3>Sales Summary</h3>
+                                <table id="salesTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Sales</th>
+                                            <th>Revenue</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="salesTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="tab-activity">
+                                <h3>Recent Activity</h3>
+                                <ul id="activity-list">
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    
+                    <section class="panel">
+                        <h2>Recent Customers</h2>
+                        <table id="customerTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="customerTableBody">
+                            </tbody>
+                        </table>                        
+                    </section>
+                </div>
+
+
+                <div>
+                    <section class="panel">
+                        <div id="accordion">
+                            <h3>System Status</h3>
+                            <div>
+                                <p class="green">
+                                    <ul id="system-status-list">
+                                    </ul>
+                                </p>
+                            </div>
+
+                            <h3>Notifications</h3>
+                            <div>
+                                <p>You have <span id="notification-num"></span> new notifications.</p>
+                                <ol id="notifications-list">
+                                </ol>
+                            </div>
+
+                            <h3>Tasks</h3>
+                            <div>
+                                <ul id="tasks-list">
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <h2>Under construction...</h2>
+                    </section>
+                    
+                    <section class="panel">
+                        <h2>Under construction...</h2>
+                    </section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- TODO: Make it a jQuery Dialog -->
+    <div id="customerDialog" title="Create New Customer">
+        <div class="form-row">
+            <label for="customerName">Name</label>
+            <input type="text" id="customerName">
+        </div>
+
+        <div class="form-row">
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail">
+        </div>
+
+
+        <div class="form-row">
+            <label for="customerType">Customer Type</label>
+            <select id="customerType">
+                <option>Standard</option>
+                <option>Premium</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="customerDate">Registration Date</label>
+            <input type="text" id="customerDate">
+        </div>
+    </div>
+
+
+   
+
+</body>
+</html>
